@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
+    android:background="#ffffff"
+    android:orientation="vertical"
     android:padding="16dp"
     tools:context=".MainActivity">
 
@@ -14,47 +15,48 @@
 
         <TextView
             android:id="@+id/article_title"
+            style="@style/article_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:maxLines="3"
-            android:textSize="24sp"
-            android:paddingBottom="8dp"
-            tools:text="Latest News Feed On Political Issues."/>
+            tools:text="Latest News Feed On Political Issues." />
 
-        <TextView
-            android:id="@+id/article_section"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:paddingBottom="8dp"
-            android:paddingRight="12dp"
-            android:gravity="end"
-            tools:text="The Coolest Section"/>
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/article_author"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="22sp"
-            android:paddingBottom="8dp"
-            tools:text="Writer McGee"/>
+            <TextView
+                android:id="@+id/article_author"
+                style="@style/article_author"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                tools:text="Writer McGee" />
+
+            <TextView
+                android:id="@+id/article_section"
+                style="@style/article_section"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                tools:text="The Coolest Section" />
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/article_date"
+            style="@style/article_date"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:paddingBottom="8dp"
-            tools:text="July 28th, 2018"/>
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            tools:text="July 28th, 2018" />
 
         <TextView
             android:id="@+id/article_url"
+            style="@style/article_url"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:paddingBottom="8dp"
-            tools:text="www.theguardian.com"/>
+            tools:text="www.theguardian.com" />
 
     </LinearLayout>
 

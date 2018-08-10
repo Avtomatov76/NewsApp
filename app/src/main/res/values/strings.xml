@@ -1,3 +1,32 @@
 <resources>
     <string name="app_name">News App</string>
+
+    <!-- No articles found [ CHAR LIMIT = NONE ] -->
+    <string name="no_data">If No News Articles Are Found,
+    "\n"Please Try Again</string>
+
+    <!-- "No Internet Connection" error message [ CHAR LIMIT = NONE ]-->
+    <string name="no_internet_connection">No Internet Connection</string>
+
+    <!-- Settings strings [CHAR LIMIT = 20 ] -->
+    <string name="settings_menu_item">Settings</string>
+    <string name="settings_title">News Settings</string>
+
+    <!-- Strings for the Preference Labels -->
+    <string name="settings_number_of_articles_label">Number of Articles (up to 20)</string>
+    <string name="settings_number_of_articles_key" translatable="false">number_of_articles</string>
+    <string name="settings_number_of_articles_default" translatable="false">20</string>
+
+    <!-- Strings For Order-By Preference [CHAR LIMIT=30] -->
+    <string name="settings_order_by_label">Order By</string>
+    <string name="settings_order_by_key">order_by</string>
+    <string name="settings_order_by_default" translatable="false">@string/settings_order_by_politics_value</string>
+
+    <!-- Label for order-by politics option [CHAR LIMIT=20] -->
+    <string name="settings_order_by_politics_label">Politics</string>
+    <string name="settings_order_by_politics_value" translatable="false">politics</string>
+
+    <!-- Label for order-by most recent option [CHAR LIMIT=20] -->
+    <string name="settings_order_by_most_recent_label">Most Recent</string>
+    <string name="settings_order_by_most_recent_value" translatable="false">newest</string>
 </resources>

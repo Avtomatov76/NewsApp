@@ -1,6 +1,5 @@
 package com.example.android.newsapp;
 
-import android.nfc.Tag;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -19,6 +18,8 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
+// A method that helps request and retrieve specific information about news articles
+// from The Guardian's server
 public final class QueryUtils {
 
     // Tag for the log messages
@@ -27,6 +28,7 @@ public final class QueryUtils {
     private QueryUtils() {
     }
 
+    // Requesting and retrieving a list of NewArticle objects
     public static List<NewsArticle> fetchNewsArticleData(String requestUrl) {
         try {
             Thread.sleep(1000);
@@ -87,18 +89,21 @@ public final class QueryUtils {
                 for (int a = 0; a < tagsArray.length(); a++) {
                     JSONObject currentAuthor = tagsArray.getJSONObject(a);
 
-                     newsAuthor = currentAuthor.getString("webTitle");
+                    newsAuthor = currentAuthor.getString("webTitle");
                 }
 
+                // A new object constructor that takes NewsArticle's class parameters.
                 NewsArticle newsArticle = new NewsArticle(newsTitle, newsSection, newsAuthor, newsDate, url);
                 currentNews.add(newsArticle);
             }
         } catch (JSONException je) {
             Log.e(TAG, "extractNewsFromJson: Problem parsing JSON news results", je);
         }
+        // Returning a list of news articles
         return currentNews;
     }
 
+    // Making an HTTP request
     private static String makeHttpRequest(URL newsArticleUrl) throws IOException {
         String jsonResponse = "";
         // Check for null
@@ -135,6 +140,7 @@ public final class QueryUtils {
         return jsonResponse;
     }
 
+    // Converting an InputStream into a String containing a JSON response
     private static String readFromStream(InputStream inputStream) throws IOException {
         StringBuilder output = new StringBuilder();
         if (inputStream != null) {
@@ -149,6 +155,7 @@ public final class QueryUtils {
         return output.toString();
     }
 
+    // Creating a URL
     private static URL createUrl(String requestUrl) {
         URL url = null;
         try {
@@ -158,6 +165,4 @@ public final class QueryUtils {
         }
         return url;
     }
-
-
 }

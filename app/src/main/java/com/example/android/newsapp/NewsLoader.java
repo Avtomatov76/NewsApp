@@ -5,6 +5,7 @@ import android.content.Context;
 
 import java.util.List;
 
+// This method loads a list of news articles on an background thread (AsyncTask).
 public class NewsLoader extends AsyncTaskLoader<List<NewsArticle>> {
     // Tag for the log messages
     private static final String TAG = NewsLoader.class.getSimpleName();
